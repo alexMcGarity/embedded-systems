@@ -11,14 +11,13 @@ After the word “START” is displayed your internal counter will start display
 Finally, the word “STOP” will be outputted on the 7-segment display indicating the end of the counter.
 */
 // Define the pins used for the 7-segment display
-DigitalOut a(D0);
-DigitalOut b(D1);
+DigitalOut a(D7);
+DigitalOut b(D8);
 DigitalOut c(D2);
 DigitalOut d(D3);
 DigitalOut e(D4);
 DigitalOut f(D5);
 DigitalOut g(D6);
-DigitalOut dp(D7);
 
 void start()
 {
@@ -42,7 +41,7 @@ void start()
     a = 0;
     b = 0;
     c = 0;
-    d = 0;
+    d = 1;
     e = 1;
     f = 1;
     g = 1;
@@ -59,12 +58,12 @@ void start()
     ThisThread::sleep_for(2000ms);
 
     // Display the letter R
-    a = 1;
-    b = 1;
-    c = 1;
+    a = 0;
+    b = 0;
+    c = 0;
     d = 0;
     e = 1;
-    f = 1;
+    f = 0;
     g = 1;
     ThisThread::sleep_for(2000ms);
 
@@ -72,7 +71,7 @@ void start()
     a = 0;
     b = 0;
     c = 0;
-    d = 0;
+    d = 1;
     e = 1;
     f = 1;
     g = 1;
@@ -191,21 +190,21 @@ void stop()
 
     // Display the letter S
     a = 1;
-    b = 1;
+    b = 0;
     c = 1;
     d = 1;
-    e = 1;
-    f = 0;
+    e = 0;
+    f = 1;
     g = 1;
     ThisThread::sleep_for(2000ms);
 
     // Display the letter T
     a = 0;
-    b = 1;
-    c = 1;
-    d = 0;
-    e = 0;
-    f = 0;
+    b = 0;
+    c = 0;
+    d = 1;
+    e = 1;
+    f = 1;
     g = 1;
     ThisThread::sleep_for(2000ms);
 
@@ -215,7 +214,7 @@ void stop()
     c = 1;
     d = 1;
     e = 1;
-    f = 0;
+    f = 1;
     g = 0;
     ThisThread::sleep_for(2000ms);
 
